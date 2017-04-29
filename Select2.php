@@ -18,7 +18,7 @@ class Select2 extends InputWidget {
 
         $id = Json::encode('#' . $this->options['id']);
         $view = $this->getView();
-        $widgetOptions = empty($this->widgetOptions) ? '' : ', ' . (Json::encode($this->widgetOptions));
+        $widgetOptions = empty($this->widgetOptions) ? '' : (Json::encode($this->widgetOptions));
         $js = "$($id).select2($widgetOptions);";
         $view->registerJS($js);
         Asset::register($view);
